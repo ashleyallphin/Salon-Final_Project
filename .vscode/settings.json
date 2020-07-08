@@ -1,4 +1,5 @@
 {
     "workbench.fontAliasing": "auto",
-    "workbench.iconTheme": "eq-material-theme-icons-darker"
+    "workbench.iconTheme": "eq-material-theme-icons-darker",
+    "colorWheel.settings.workspaceColor": "hsl(97,98%,52%)"
 }

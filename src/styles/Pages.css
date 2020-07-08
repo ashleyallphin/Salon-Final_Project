@@ -60,9 +60,14 @@ red: #C44D58
     background-color: #3E4854 !important;   
 }
 
-/* LOGIN ====================================================== LOGIN */
+
+/* single-project page */
+
+.single-project {
+    background-color: #fff;
+}
 
 
-/* UPLOAD ====================================================== UPLOAD */
-
-/* 404 ====================================================== 404 */
+.single-project-image {
+    max-height: 100vh;
+  }
