@@ -34,6 +34,7 @@ class Profile extends Component {
     componentDidMount() {
         const username = this.props.match.params.username;
         this.init(username);
+        document.title = `${this.props.match.params.username}'s Salon Studio`;
     }
 
     // upload current logged in user data on return to studio from navbar from someone else's studio
