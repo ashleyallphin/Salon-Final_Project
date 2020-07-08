@@ -29,6 +29,7 @@ red: #C44D58
     flex: 1;
     display: flex;
     flex-direction: column;
+    background-color: #A8DCD9;
     }
 
 .vertical-center {
@@ -43,13 +44,7 @@ red: #C44D58
     flex-grow: 1;
 }
 
-.jumbotron {
-    background: transparent;
-    text-align: center;
-    display: flex;
-    padding: 0;
-    margin-bottom: 0;
-}
+
 
 .jumbotron img {
     height: 18vw;
@@ -63,11 +58,22 @@ red: #C44D58
 
 /* single-project page */
 
-.single-project {
-    background-color: #fff;
+.single-project-component {
+    padding: 5vh 0;
+    max-width: 90%;
 }
 
+.single-project-section {
+    background-color: #fff;
+    max-width: 100%;
+}
+
+.gallery-section {
+    background-color: #A8DCD9;
+    max-width: 100%;
+}
 
 .single-project-image {
-    max-height: 100vh;
+    max-width: 50%;
+    margin: 3rem;
   }

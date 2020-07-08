@@ -10,6 +10,9 @@ class UserGallery extends Component {
     render() {
         return (
                 <div class="page">
+                <div className="section-title">
+                <span>&nbsp;</span>
+                </div>
                     <h1>render user projects below</h1>
                     {/* <UserProjectCard /> */}
                 </div>

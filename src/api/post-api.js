@@ -58,7 +58,7 @@ export const listProjectsByUser = (username, token) => {
         .catch(err => console.log(err));
 };
 
-export const postFeedback = (userId, token, postId, comment) => {
+export const postFeedback = (userId, username, token, postId, comment) => {
     console.log(`\nhitting postFeedback method from post-api.js\n`.x205);
     return fetch(`/project/comment`, {
         method: "PUT",
@@ -67,7 +67,7 @@ export const postFeedback = (userId, token, postId, comment) => {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`
         },
-        body: JSON.stringify({ userId, postId, comment })
+        body: JSON.stringify({ userId, username, postId, comment })
     })
         .then(response => {
             return response.json();
@@ -75,16 +75,16 @@ export const postFeedback = (userId, token, postId, comment) => {
         .catch(err => console.log(err));
 };
 
-export const deleteFeedback = (userId, token, postId, comment) => {
+export const deleteFeedback = (userId, username, token, postId, comment) => {
     console.log(`\nhitting deleteFeedback method from post-api.js\n`.x205);
-    return fetch(`/project/comment`, {
+    return fetch(`/project/uncomment`, {
         method: "PUT",
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`
         },
-        body: JSON.stringify({ userId, postId, comment })
+        body: JSON.stringify({ userId, postId, username, comment })
     })
         .then(response => {
             return response.json();

@@ -120,12 +120,20 @@ button:focus {
 }
 
 .form-group,
+.feedback-form,
 .custom-file-input {
   margin: 0 auto;
   font-family: "St Ryde Light Italic";
   color: #566271;
   width: 70vw;
   max-width: 30rem;
+}
+
+.feedback-form {
+  padding: 3rem 0;
+  max-width: 50rem;
+  display:flex;
+  flex-direction:column;
 }
 
 .form-control,
@@ -379,6 +387,7 @@ a:hover {
 .jumbotron {
   background: transparent;
   text-align: center;
+  display: flex;
   padding: 0;
   margin-bottom: 0;
   flex-grow: 1;
@@ -524,21 +533,18 @@ a:hover {
 }
 
 .projects {
-  background-color: #A8DCD9;
-  margin: 0 auto;
-  justify-content: center;
-  padding-top: 5vh;
+  padding: 5vh 0;
 }
 
 .project-card {
+  /* background-color: #c42c3b; */
   display: inline-block;
-  width: 90vw;
   border: none !important;
   display: flex;
   flex-direction: row;
   max-width: 100%;
-  max-width: 800px;
-  margin: 0 0 5vh 0;
+  max-height: 400px;
+  margin: 5vh;
   border-radius: 1rem !important;
 }
 
@@ -553,10 +559,12 @@ a:hover {
   background-size: 150%;
   border: none !important;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .project-image img {
   border: none;
+  cursor: pointer;
 }
 
 .project-card-body {
@@ -642,7 +650,7 @@ a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
- -webkit-line-clamp: 8; /* number of lines to show */
+ -webkit-line-clamp: 3; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
 
@@ -656,7 +664,7 @@ a:hover {
 
 .project-materials {
   font-family: "St Ryde Light Italic";
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .project-tags {
@@ -667,17 +675,20 @@ a:hover {
 }
 
 .edit-project-button,
-.view-feedback-button {
+.view-feedback-button,
+.submit-feedback-button {
   background-color: #F26A21;
   color: #fff;
   font-family: "St Ryde Medium";
-  border: none;
+  border: 1px solid transparent;
 }
 
 .edit-project-button:hover,
 .view-feedback-button:hover,
 .edit-project-button:focus,
-.view-feedback-button:focus {
+.view-feedback-button:focus,
+.submit-feedback-button:hover,
+.submit-feedback-button:focus {
   background-color: #C44D58;
 }
 
@@ -689,11 +700,9 @@ a:hover {
   display: flex;
 }
 
-@media only screen and (max-width: 768) {
 
-  
+@media only screen and (max-width: 768) {}
 
-}
 
 @media only screen and (max-width: 525px) {
 

@@ -4,6 +4,8 @@ import DefaultProjectImage from '../assets/images/default_pics/salon-default-pro
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import logo from '../assets/images/logos/salon-icon-red.svg';
 // import wip from '../assets/images/default_pics/WIP.svg';
 
 class ProjectCard extends Component {
@@ -16,7 +18,6 @@ class ProjectCard extends Component {
     }
 
     componentDidMount() {
-    document.title = `Salon: Gallery`;
     listProjects().then((data) => {
         if (data.error) {
         console.log(data.error);
@@ -31,9 +32,20 @@ class ProjectCard extends Component {
         return (
 
             <div className="projects container fluid">
+
+                <Jumbotron fluid className="jumbotron" >
+                <div className="vertical-center ">
+                    <img
+                    alt="Salon Icon"
+                    src={logo}
+                />{' '}
+                <h1>view our collection</h1>
+                </div>
+                </Jumbotron>
+
             {posts.map((post, i) => (
                 
-                <Card
+                    <Card
                     className="project-card card"
                     key={i}>
                     
@@ -67,7 +79,7 @@ class ProjectCard extends Component {
                         <Link
                             className="project-artist"
                             to={`/artist/studio/${post.postedBy.username}`}>
-                        {post.postedBy.username}
+                            {post.postedBy.username}
                         </Link>
                         </Card.Text>
 
@@ -75,9 +87,9 @@ class ProjectCard extends Component {
                         {post.body}
                         </Card.Text>
 
-                        <Card.Text className="project-category">
+                        {/* <Card.Text className="project-category">
                         {post.projectCategory}
-                        </Card.Text>
+                        </Card.Text> */}
 
                         <Card.Text className="project-materials">
                         {post.projectMedium}
@@ -89,7 +101,7 @@ class ProjectCard extends Component {
                                     className="view-feedback-button"
                                     variant="primary">
                                     Visit Project</Button>
-                                </Link>
+                            </Link>
 
                             {/* <Button
                                 className="edit-project-button"
@@ -97,23 +109,22 @@ class ProjectCard extends Component {
                                 Edit Project</Button> */}
                         </div>
 
-                        <div className="flex-grow"> 
-                        </div>
+                        {/* <div className="flex-grow"></div> */}
 
                         <Card.Text className="project-tags">
+                        Submitted to Salon: {new Date(post.posted).toDateString()}
+                        <br></br>
                         Tags:&nbsp;{post.projectTags}
                         </Card.Text>
                     
                     </Card.Body>
                 
                 </Card>
+))}
             
-            ))}
-        </div>
-    
-        
+            </div>
+            
             )
-        
         
         };
 
@@ -121,7 +132,6 @@ class ProjectCard extends Component {
         const { posts } = this.state;
         return (
         <>
-            <div className="section-title">Public Gallery</div>
             {this.renderProjects(posts)}
         </>
     );
