@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/components.css';
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import logo from '../assets/images/logos/salon-icon-red.svg';
+import logo from '../assets/images/logos/salon-mustache-twitch.gif';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Redirect } from 'react-router-dom';
