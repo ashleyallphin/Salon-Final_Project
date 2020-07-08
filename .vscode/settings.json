@@ -1,4 +1,11 @@
 {
+<<<<<<< HEAD
     "workbench.fontAliasing": "auto",
     "workbench.iconTheme": "eq-material-theme-icons-darker"
+=======
+    "colorWheel.settings.workspaceColor": "hsl(238,27%,59%)",
+    "launch": {
+    },
+    "editor.snippetSuggestions": "top"
+>>>>>>> repo-2/master
 }

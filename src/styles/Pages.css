@@ -1,0 +1,68 @@
+/*
+
+FONTS 
+---------------------------------------------
+font-family: "St Ryde Light";
+font-family: "St Ryde Light Italic";
+font-family: "St Ryde Medium";
+font-family: "St Ryde Medium Italic";
+font-family: "St Ryde Bold";
+font-family: "St Ryde Bold Italic";
+
+COLORS
+---------------------------------------------
+gray: #566271
+    dark gray: #3E4854
+    darker gray: #242C36
+orange: #F26A21
+green: #C6D930
+blue: #A8DCD9
+red: #C44D58
+
+*/
+
+/* GLOBAL ====================================================== GLOBAL */
+
+.page {
+    font-family: 'St Ryde W03 Medium';
+    padding: 0; 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    }
+
+.vertical-center {
+    margin:auto;
+}
+
+.vertical-center img {
+    margin-top: 0;
+}
+
+.div-grow {
+    flex-grow: 1;
+}
+
+.jumbotron {
+    background: transparent;
+    text-align: center;
+    display: flex;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.jumbotron img {
+    height: 18vw;
+    margin-bottom: 4px;
+}
+
+.btn:hover {
+    background-color: #3E4854 !important;   
+}
+
+/* LOGIN ====================================================== LOGIN */
+
+
+/* UPLOAD ====================================================== UPLOAD */
+
+/* 404 ====================================================== 404 */
