@@ -10,9 +10,9 @@ class LogIn extends Component {
 
     render() {
         return (
-                <>
+                <div className="page">
                 <LogInForm />
-                </>
+                </div>
         );
     }
 }
