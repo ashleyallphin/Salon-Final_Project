@@ -67,20 +67,35 @@ class FeedbackForm extends Component {
                     </div>
 
                     <div>
-                    <h2 className="ml-2 mb-2">Comments</h2>
+                    <h2 className="ml-2 mb-2 mt-4">Comments</h2>
                     <Card>
                     <Card.Body>
                     <div className="rendered-comments">
                     
                 
-                        <div className="single-comment">
+                        
                         {comments.map((comment, i) => (
                             <div key={i}>
-                                <p>{comment.text}</p>
-                                by {comment.postedBy.username}
+                                <div className="single-comment">
+                                
+                                <div className="comment-poster">
+                                <Link
+                                to={`/artist/studio/${comment.postedBy.username}`}>
+                                    {comment.postedBy.username}
+                                </Link>
+                                &nbsp;said:
+                                </div>
+
+                                <div className="comment-text">
+                                {comment.text}
+                                </div>
+                                
+                                <div className="comment-date">
+                                {new Date(comment.created).toDateString()}</div>
+                                </div>
                             </div>
                         ))}
-                        </div>
+                        
                         </div>
 
                     </Card.Body>

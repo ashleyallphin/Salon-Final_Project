@@ -10,7 +10,7 @@ class Footer extends Component {
         return (
                 <div className="footer text-center">
                     <a
-                        href="https://github.com/ashleyallphin/"
+                        href="https://github.com/ashleyallphin/Salon-Final_Project"
                         target="_blank"
                         rel="noopener noreferrer">
                     <FontAwesomeIcon icon={["fab", "github"]} />

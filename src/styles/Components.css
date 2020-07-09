@@ -163,10 +163,6 @@ button:focus {
   padding: 10px 20px 10px 20px;
 }
 
-.navbar-active {
-  opacity: 100% !important;
-  }
-
 .functional-navigation,
 .top-nav {
   background-color: #F26A21;
@@ -202,6 +198,15 @@ button:focus {
   margin-left: 5px;
   padding-left: 0 !important;
 }
+
+.nav-link:hover {
+  opacity: 100%;
+}
+
+.active-navbar {
+  opacity: 100% !important;
+  color: #C44D58;
+  }
 
 .functional-navigation h6 span:hover {
   padding-bottom: 2px;
@@ -381,12 +386,13 @@ button:focus {
 
 /* UPLOAD PROJECT FORM ============================ UPLOAD PROJECT FORM */
 
-.upload-project-form {
+.upload-project-form,
+.edit-profile-form {
   background-color: #A8DCD9;
   width: 100vw;
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  padding: 2rem 0 4rem 0;
 }
 
 a:hover {
@@ -526,7 +532,7 @@ a:hover {
 
 .delete-profile-icon {
   cursor: pointer;
-  margin: 15px 0;
+  margin: 2rem 0 0 0;
 }
 
 .delete-profile-icon:hover {
@@ -552,7 +558,6 @@ a:hover {
   display: flex;
   flex-direction: row;
   max-width: 100%;
-  max-height: 400px;
   margin: 5vh;
   border-radius: 1rem !important;
 }
@@ -580,10 +585,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   padding: 2rem;
-}
-
-.project-name {
-  max-width: 90%;
 }
 
 .project-name h1 {
@@ -659,7 +660,7 @@ a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
- -webkit-line-clamp: 3; /* number of lines to show */
+ -webkit-line-clamp: 8; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
 
@@ -672,8 +673,8 @@ a:hover {
 }
 
 .project-materials {
-  font-family: "St Ryde Light Italic";
-  font-size: 1rem;
+  font-family: "St Ryde Light";
+  font-size: 1.1rem;
 }
 
 .project-tags {
@@ -709,11 +710,54 @@ a:hover {
   display: flex;
 }
 
+-------------
 
-@media only screen and (max-width: 768) {}
+.single-project-artist {
+  font-family: "St Ryde Bold";
+  font-size: 1.25rem; 
+  color: #566271;
+  margin-bottom: .5rem;
+}
+
+.single-artist-project-artist:hover { 
+  color: #3E4854;
+}
+
+.single-project-description {
+  font-family: "St Ryde Light";
+  font-size: 1.75rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  white-space: pre-line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+ -webkit-line-clamp: 8; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.single-project-category {
+  font-family: "St Ryde Light";
+  font-size: 1rem;
+  margin-bottom: 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.single-project-materials {
+  font-family: "St Ryde Light";
+  font-size: 1.25rem;
+}
+
+.single-project-status {
+  font-family: "St Ryde Light Italic";
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #566271;
+}
 
 
-@media only screen and (max-width: 525px) {
+@media only screen and (max-width: 768px) {
 
       .project-card {
           display: block;
@@ -733,7 +777,6 @@ a:hover {
           width: 100%;
           cursor: pointer;
           border-radius: 0 !important;
-          background-size: 150%;
           border: none !important;
           object-fit: cover;
           max-height: 20rem;

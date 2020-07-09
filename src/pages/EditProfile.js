@@ -260,7 +260,7 @@ class EditProfile extends Component {
         }
 
         return (
-            <div className="component text-center">
+            <div className="component text-center edit-profile-form">
                 
                 <Jumbotron fluid className="jumbotron" >
                     <div className="vertical-center">
