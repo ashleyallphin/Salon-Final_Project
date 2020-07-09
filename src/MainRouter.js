@@ -28,6 +28,7 @@ const MainRouter = () => (
             <PrivateRoute exact path="/artists" component={Artists} />
             <PrivateRoute exact path="/gallery/:postId" component={SingleProject} />
             <PrivateRoute exact path="/gallery" component={Gallery} />
+            <PrivateRoute exact path="/test" component={Gallery} />
             <PrivateRoute exact path="/artist/studio/:username" component={Studio} />
             <PrivateRoute exact path="/artist/edit/:username" component={EditProfile} />
             <PrivateRoute exact path="/artist/upload/:username" component={Upload} />
