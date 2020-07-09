@@ -466,11 +466,11 @@ a:hover {
 
 .section-title {
   background-color: #3E4854;
-  font-family: "St Ryde Bold";
+  font-family: "St Ryde Medium";
   font-size: calc(1vh + 14px);
   color: #fff;
   line-height: 1;
-  padding: 12px 0 12px 30px;
+  padding: 15px 0 15px 30px;
   border-bottom: 5px solid #C6D930;
 }
 
@@ -725,15 +725,10 @@ a:hover {
 
 .single-project-description {
   font-family: "St Ryde Light";
-  font-size: 1.75rem;
+  font-size: 1.55rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;
   white-space: pre-line;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
- -webkit-line-clamp: 8; /* number of lines to show */
-  -webkit-box-orient: vertical;
 }
 
 .single-project-category {
