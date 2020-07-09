@@ -3,7 +3,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { isAuthenticated, logout } from '../api/authentication-api';
-import '../styles/components.css';
+import '../styles/styles.css';
 import logo from '../assets/images/logos/salon-wordmark-white.svg';
 // import Button from 'react-bootstrap/Button';
 // import Form from 'react-bootstrap/Form';

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
-import '../styles/components.css';
+import '../styles/styles.css';
 import logo from '../assets/images/logos/salon-wordmark-white.svg';
 
 class TopNav404 extends Component {

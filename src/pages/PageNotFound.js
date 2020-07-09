@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/pages.css';
+import '../styles/styles.css';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import logo from '../assets/images/logos/salon-404.svg';
 import { Link } from 'react-router-dom';
