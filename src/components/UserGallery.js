@@ -8,17 +8,13 @@ import { isAuthenticated } from '../api/authentication-api';
 
 class UserGallery extends Component {
     
-
+    
+    
     render() {
-
         const { posts } = this.props
-
         return (
 
             <>
-            <div className="section-title">
-            {isAuthenticated().user.username}'s Gallery
-            </div>
 
             <div className="projects container fluid">
 
@@ -73,10 +69,41 @@ class UserGallery extends Component {
                                 Visit Project</Button>
                         </Link>
 
-                        {/* <Button
-                            className="edit-project-button"
+                    
+                            {isAuthenticated().user &&
+                            isAuthenticated().user._id === post.postedBy._id && (
+
+                                <Button
+                            className="delete-project-button"
                             variant="primary">
-                            Edit Project</Button> */}
+                            Delete Project</Button>
+                            )}
+                            
+                            {/* {isAuthenticated().user &&
+                            isAuthenticated().user._id !== user._id && (
+
+                                <div className="flex-div">
+                                
+                                <a href="http://paypal.com">
+                                    <Button className="edit-profile-button"
+                                    variant="primary">
+                                    Donate to Artist
+                                    </Button>
+                                </a>
+                                
+                                </div>
+                            )} */}
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     </div>
 
                     {/* <div className="flex-grow"></div> */}

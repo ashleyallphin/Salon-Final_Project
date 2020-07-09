@@ -178,7 +178,11 @@ class Profile extends Component {
                     </Card>
 
 				</div>  
-            {/* <div className="flex-grow"></div> */}
+            
+                <div className="section-title">
+                        {user.username}'s Gallery
+                </div>
+
             <UserGallery
                 posts={posts}
             />

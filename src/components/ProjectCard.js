@@ -104,7 +104,7 @@ class ProjectCard extends Component {
                             </Link>
 
                             {/* <Button
-                                className="edit-project-button"
+                                className="delete-project-button"
                                 variant="primary">
                                 Edit Project</Button> */}
                         </div>

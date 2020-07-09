@@ -84,10 +84,10 @@ a:hover {
   text-decoration: none;
 }
 
-.btn:hover {
-  background-color: #3E4854 !important;  
+/* .btn:hover {
+  background-color: #3E4854;  
   color: #fff !important; 
-}
+} */
 
 .flex-div {
   display: flex;
@@ -684,7 +684,6 @@ a:hover {
   color: #566271;
 }
 
-.edit-project-button,
 .view-feedback-button,
 .submit-feedback-button {
   background-color: #F26A21;
@@ -693,13 +692,20 @@ a:hover {
   border: 1px solid transparent;
 }
 
-.edit-project-button:hover,
+.delete-project-button {
+  background-color: #C44D58;
+  color: #fff;
+  font-family: "St Ryde Medium";
+  border: 1px solid transparent;
+}
+
+.delete-project-button:hover,
 .view-feedback-button:hover,
-.edit-project-button:focus,
+.delete-project-button:focus,
 .view-feedback-button:focus,
 .submit-feedback-button:hover,
 .submit-feedback-button:focus {
-  background-color: #C44D58;
+  background-color: #C44D58 !important;
 }
 
 .view-feedback-button {
@@ -782,7 +788,7 @@ a:hover {
 @media only screen and (max-width: 350px) {
 
   .view-feedback-button,
-  .edit-project-button {
+  .delete-project-button {
   display: block
   }
 
