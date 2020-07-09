@@ -189,7 +189,7 @@ button:focus {
 }
 
 .nav-link {
-  opacity: 100% !important;
+  opacity: 100%;
   font-size: calc(.5em + 13px);
   color: #fff !important;
   max-height: calc(.5 * 3);
@@ -199,7 +199,7 @@ button:focus {
 }
 
 .nav-link:hover {
-  opacity: 100% !important;
+  opacity: 100%;
 }
 
 .active-navbar {
@@ -273,7 +273,7 @@ button:focus {
   box-shadow: none !important;
   outline: none !important;
   background-color: #F26A21 !important;
-  opacity: 100% !important;
+  opacity: 100%;
 }
 
 .search-input-field::placeholder {
@@ -413,12 +413,12 @@ a:hover {
   line-height: 5vh;
   padding: 0;
   margin: 0;
-  width: 100% !important;
+  width: 100%;
   font-family: "St Ryde Medium";
 }
 
 .form-check-input {
-  height: 100% !important; 
+  height: 100%; 
 }
 
 .status-select {
@@ -443,7 +443,7 @@ a:hover {
 
 .footer a:hover,
 .footer a:focus {
-  opacity: 100% !important;
+  opacity: 100%;
   text-decoration: none;
 }
 
@@ -452,7 +452,7 @@ a:hover {
 }
 
 .footer a {
-  opacity: 100% !important;
+  opacity: 100%;
   color: #fff;
 }
 
@@ -555,7 +555,7 @@ a:hover {
   border: none !important;
   display: flex;
   flex-direction: row;
-  max-width: 100% !important;
+  max-width: 100%;
   margin: 5vh;
   border-radius: 1rem !important;
 }
@@ -714,7 +714,6 @@ a:hover {
   display: flex;
 }
 
--------------
 
 .single-project-artist {
   font-family: "St Ryde Bold";
@@ -758,24 +757,22 @@ a:hover {
 
 @media only screen and (max-width: 768px) {
 
-      .project-card {
+      .project-card, .profile-card {
           display: block;
       }
 
       .wip {
-          width: calc(100% !important);
+          width: calc(100%);
       }
 
       .project-card-buttons {
           display: block;
       }
 
-      .profile-card {
-        display: block;
-      }
+
 
       .project-image {
-          width: 100% !important;
+          width: 100%;
           cursor: pointer;
           border-radius: 0 !important;
           border: none !important;
@@ -870,12 +867,12 @@ red: #C44D58
 
 .single-project-section {
   background-color: #fff;
-  max-width: 100% !important;
+  max-width: 100%;
 }
 
 .gallery-section {
   background-color: #A8DCD9;
-  max-width: 100% !important;
+  max-width: 100%;
 }
 
 .single-project-image {
