@@ -189,7 +189,7 @@ button:focus {
 }
 
 .nav-link {
-  opacity: 100 !important;
+  opacity: 100% !important;
   font-size: calc(.5em + 13px);
   color: #fff !important;
   max-height: calc(.5 * 3);
@@ -199,11 +199,11 @@ button:focus {
 }
 
 .nav-link:hover {
-  opacity: 100 !important;
+  opacity: 100% !important;
 }
 
 .active-navbar {
-  opacity: 100 !important !important;
+  opacity: 100% !important;
   color: #C44D58;
   }
 
@@ -213,7 +213,7 @@ button:focus {
 }
 
 .active span {
-  opacity: 100 !important !important;
+  opacity: 100% !important;
   color: #fff;
   border-bottom: 5px solid #C6D930;
   padding-bottom: 2px;
@@ -273,7 +273,7 @@ button:focus {
   box-shadow: none !important;
   outline: none !important;
   background-color: #F26A21 !important;
-  opacity: 100 !important;
+  opacity: 100% !important;
 }
 
 .search-input-field::placeholder {
@@ -413,12 +413,12 @@ a:hover {
   line-height: 5vh;
   padding: 0;
   margin: 0;
-  width: 100 !important;
+  width: 100% !important;
   font-family: "St Ryde Medium";
 }
 
 .form-check-input {
-  height: 100 !important; 
+  height: 100% !important; 
 }
 
 .status-select {
@@ -443,7 +443,7 @@ a:hover {
 
 .footer a:hover,
 .footer a:focus {
-  opacity: 100 !important;
+  opacity: 100% !important;
   text-decoration: none;
 }
 
@@ -452,7 +452,7 @@ a:hover {
 }
 
 .footer a {
-  opacity: 100 !important;
+  opacity: 100% !important;
   color: #fff;
 }
 
@@ -555,7 +555,7 @@ a:hover {
   border: none !important;
   display: flex;
   flex-direction: row;
-  max-width: 100 !important;
+  max-width: 100% !important;
   margin: 5vh;
   border-radius: 1rem !important;
 }
@@ -763,7 +763,7 @@ a:hover {
       }
 
       .wip {
-          width: calc(100 !important);
+          width: calc(100% !important);
       }
 
       .project-card-buttons {
@@ -775,7 +775,7 @@ a:hover {
       }
 
       .project-image {
-          width: 100 !important;
+          width: 100% !important;
           cursor: pointer;
           border-radius: 0 !important;
           border: none !important;
@@ -870,12 +870,12 @@ red: #C44D58
 
 .single-project-section {
   background-color: #fff;
-  max-width: 100 !important;
+  max-width: 100% !important;
 }
 
 .gallery-section {
   background-color: #A8DCD9;
-  max-width: 100 !important;
+  max-width: 100% !important;
 }
 
 .single-project-image {
