@@ -569,7 +569,7 @@ a:hover {
 .project-image {
   width: 40%;
   cursor: pointer;
-  border-radius: 0 !important;
+  border-radius: 1rem 0rem 0rem 1rem !important;
   background-size: 150%;
   border: none !important;
   object-fit: cover;
