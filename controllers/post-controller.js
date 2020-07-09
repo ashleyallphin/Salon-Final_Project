@@ -11,6 +11,7 @@ exports.postsById = (req, res, next, id) => {
     .populate("comments", "text created")
     .populate("comments.postedBy", "_id username")
     .populate("postedBy", "_id username")
+
     .exec((err, post) => {
         if (err || !post) {
             return res.status(400).json({
@@ -172,25 +173,49 @@ exports.leaveFeedback = (req, res) => {
     });
 }
 
+// exports.removeFeedback = (req, res) => {
+//     console.log(`\n\nhitting removeFeedback method from post-controller`.x211)
+//     let comment = req.body.comment;
+//     // https://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate
+//     Post.findByIdAndUpdate (
+//         req.body.postId,
+//         { $pull: { comments: { _id:comment._id} } },
+//         { new: true },
+//     )
+//     .populate ('comments.postedBy', '_id username email')
+//     .populate ('postedBy', "_id username email")
+//     .exec((err, result) => {
+//         if (err) {
+//             return res.status(400).json({
+//                 error: err
+//             });
+//         } else {
+//             res.json(result);
+//             console.log(`moved through removeFeedback method from post-controller!`.x161);
+//         }
+//     });
+// }
+
 exports.removeFeedback = (req, res) => {
     console.log(`\n\nhitting removeFeedback method from post-controller`.x211)
     let comment = req.body.comment;
-    // https://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate
-    Post.findByIdAndUpdate (
+
+    Post.findByIdAndDelete(
         req.body.postId,
-        { $pull: { comments: { _id:comment._id} } },
-        { new: true },
+        { $pull: { comments: { _id: comment._id } } },
+        { new: true }
     )
-    .populate ('comments.postedBy', '_id username email')
-    .populate ('postedBy', "_id username email")
-    .exec((err, result) => {
-        if (err) {
-            return res.status(400).json({
-                error: err
-            });
-        } else {
-            res.json(result);
+        .populate("comments.postedBy", "_id username")
+        .populate("postedBy", "_id username")
+        .exec((err, result) => {
+            if (err) {
+                return res.status(400).json({
+                    error: err
+                });
+            } else {
+                res.json(result);
+                
+            }
             console.log(`moved through removeFeedback method from post-controller!`.x161);
-        }
-    });
-}
+        });
+};

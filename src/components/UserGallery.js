@@ -8,13 +8,17 @@ class UserGallery extends Component {
     }
 
     render() {
+
+        const { posts } = this.props
+
         return (
                 <div class="page">
                 <div className="section-title">
-                <span>&nbsp;</span>
+                <span>username's profile</span>
                 </div>
                 <div className="flex-grow"></div>
-                    {/* <h1>render user projects below</h1> */}
+                    <h1>render user projects below</h1>
+                    {JSON.stringify(posts)}
                     {/* <UserProjectCard /> */}
                 </div>
         );

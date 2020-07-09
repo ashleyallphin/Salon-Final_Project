@@ -99,3 +99,9 @@ div.comment-date {
     color: #F26A21 !important;
     font-size: 1.1rem;
 }
+
+.delete-comment {
+    color: #C44D58;
+    size: 1.25rem;
+}
+

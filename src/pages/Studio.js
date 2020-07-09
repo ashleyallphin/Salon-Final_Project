@@ -6,16 +6,22 @@ import { faStore, faHome } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { Redirect, Link } from 'react-router-dom';
 import { read } from '../api/user-api';
+import { listProjectsByUser } from '../api/post-api';
 import { isAuthenticated } from '../api/authentication-api';
 import DefaultProfilePic from '../assets/images/default_pics/salon-default-profile-pic.png';
 import UserGallery from '../components/UserGallery';
+
 
 class Profile extends Component {
     constructor () {
         super()
         this.state = {
             user: "",
-            redirectToSignIn: false
+            redirectToSignIn: false,
+            error: "",
+            posts: [],
+            // user: { posts }
+
         };
     };
 
@@ -27,9 +33,25 @@ class Profile extends Component {
                 this.setState({ redirectToSignin:true });
             } else {
                 this.setState({ user:data });
+                this.loadPosts(data.username)
             }
         });
     };
+
+    loadPosts = username => {
+        const token = isAuthenticated().token;
+        listProjectsByUser(username, token)
+        .then(data => {
+            if(data.error) {
+                console.log(data.error)
+            } else {
+                this.setState({ posts:data })
+            }
+        });
+    };
+
+
+
 
     componentDidMount() {
         const username = this.props.match.params.username;
@@ -45,7 +67,7 @@ class Profile extends Component {
 
     render() {
 
-        const { redirectToSignIn, user } = this.state;
+        const { redirectToSignIn, user, posts } = this.state;
         if(redirectToSignIn) return <Redirect to="/login" />
 
         const profileImageURL = user.username
@@ -157,7 +179,9 @@ class Profile extends Component {
 
 				</div>  
             {/* <div className="flex-grow"></div> */}
-            <UserGallery />
+            <UserGallery
+                posts={posts}
+            />
 
             </div>          
 

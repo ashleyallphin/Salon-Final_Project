@@ -128,7 +128,7 @@ class SingleProject extends Component {
                 {this.renderProject(post)}
                 <FeedbackForm
                     postId={post._id}
-                    comments={comments}
+                    comments={comments.reverse()}
                     updateComments={this.updateComments}
                     />
             </div>
