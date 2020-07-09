@@ -92,16 +92,16 @@ export const postFeedback = (userId, token, postId, comment) => {
         .catch(err => console.log(err));
 };
 
-export const deleteFeedback = (userId, username, token, postId, comment) => {
+export const deleteFeedback = (userId, token, postId, comment) => {
     console.log(`\nhitting deleteFeedback method from post-api.js\n`.x205);
     return fetch(`/project/uncomment`, {
-        method: "PUT",
+        method: "DELETE",
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`
         },
-        body: JSON.stringify({ userId, postId, username, comment })
+        body: JSON.stringify({ userId, postId, comment })
     })
         .then(response => {
             return response.json();

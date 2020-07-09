@@ -33,6 +33,7 @@ class FeedbackForm extends Component {
 
     submitFeedback = e => {
         e.preventDefault();
+        console.log('hitting submitFeedback method')
 
         if (!isAuthenticated()) {
             this.setState({ error: "Please sign in to leave feedback for this artist." });
@@ -62,22 +63,27 @@ class FeedbackForm extends Component {
     }
 
 
+
+    // passing
     deleteComment = comment => {
         const userId = isAuthenticated().user._id;
         const token = isAuthenticated().token;
         const postId = this.props.postId;
-
+        // passing
         deleteFeedback(userId, token, postId, comment).then(data => {
             if (data.error) {
                 console.log(data.error);
             } else {
+                // not getting an error
                 this.props.updateComments(data.comments);
             }
         });
     };
+
+    // passing
     deleteConfirmed = comment => {
         let answer = window.confirm(
-            "Are you sure you want to remove this feedback?"
+            "Are you sure you want to delete your comment?"
         );
         if (answer) {
             this.deleteComment(comment);
