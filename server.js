@@ -26,7 +26,6 @@ const postRoutes = require("./routes/post-route");
 // DATABASE
 // ================================================
 var db = process.env.MONGODB_URI
-
 mongoose.connect(db)
 .then(() => console.log(`Successfully connected to MongoDB.`.x206 + 
 `\n+++++++++++++++++++++++++++++++++++++++++\n`.x255))
@@ -50,9 +49,9 @@ app.use(function (err, req, res, next) {
     });
 
 
-    if (process.env.NODE_ENV === 'production') {
-        app.use(express.static('/build'));
-    }
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('/build'));
+}
 
 // LISTEN
 // ================================================
