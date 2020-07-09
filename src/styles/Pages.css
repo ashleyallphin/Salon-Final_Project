@@ -109,3 +109,7 @@ div.comment-date {
     size: 1.25rem;
 }
 
+.delete-post-button {
+    color: #C44D58 !important;
+}
+

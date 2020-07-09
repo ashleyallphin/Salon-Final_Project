@@ -74,8 +74,7 @@ class UserGallery extends Component {
                                 Visit Project</Button>
                         </Link>
 
-                    
-                            {isAuthenticated().user &&
+                            {/* {isAuthenticated().user &&
                             isAuthenticated().user._id === post.postedBy._id && (
 
                             <Button
@@ -84,7 +83,7 @@ class UserGallery extends Component {
                             onClick={this.deletePost}
                             >
                             Delete Project</Button>
-                            )}
+                            )} */}
                             
                     </div>
 

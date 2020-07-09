@@ -11,7 +11,6 @@ exports.postsById = (req, res, next, id) => {
     .populate("comments", "text created")
     .populate("comments.postedBy", "_id username")
     .populate("postedBy", "_id username")
-
     .exec((err, post) => {
         if (err || !post) {
             return res.status(400).json({
@@ -195,6 +194,8 @@ exports.leaveFeedback = (req, res) => {
 //         }
 //     });
 // }
+
+
 
 exports.removeFeedback = (req, res) => {
     console.log(`\n\nhitting removeFeedback method from post-controller -- route is project/uncomment/`.x211)
