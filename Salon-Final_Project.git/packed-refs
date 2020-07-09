@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled sorted 
+d1d2ec893580f0e5aafb85b1e135a09fabab2b1a refs/heads/ashley
+4dfda81d3388c94090d91fa6271ae2e90c720d43 refs/heads/ashley-test
+5fd5e6cc3c083391359e0c4895fb79cecb476a72 refs/heads/master
