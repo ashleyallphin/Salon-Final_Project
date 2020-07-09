@@ -9,9 +9,11 @@ class Gallery extends Component {
 
     render() {
         return (
-                <div class="page">
-                    <ProjectCard />
-                </div>
+            
+            <div className="gallery-section">
+                <ProjectCard />
+            </div>
+
         );
     }
 }

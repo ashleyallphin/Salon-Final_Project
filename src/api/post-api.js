@@ -1,7 +1,7 @@
 const color = require('colors-cli/toxic');
 // router.get('/posts', restrictedRouteAccess, getPosts);
 // router.get("/posts/by/:username", restrictedRouteAccess, postsByUser);
-// router.delete("/post/:postId", restrictedRouteAccess, isArtist, deletePost);
+// router.delete("/post/:postId", restrictedRouteAccess, isPoster, deletePost);
 // router.post('/post/new/:username', restrictedRouteAccess, createPost, createPostValidator)
 // router.param("username", getUserByUsername);
 // router.param("postId", postsById);
@@ -75,16 +75,16 @@ export const postFeedback = (userId, token, postId, comment) => {
         .catch(err => console.log(err));
 };
 
-export const deleteFeedback = (userId, token, postId, comment) => {
+export const deleteFeedback = (userId, username, token, postId, comment) => {
     console.log(`\nhitting deleteFeedback method from post-api.js\n`.x205);
-    return fetch(`/project/comment`, {
+    return fetch(`/project/uncomment`, {
         method: "PUT",
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`
         },
-        body: JSON.stringify({ userId, postId, comment })
+        body: JSON.stringify({ userId, postId, username, comment })
     })
         .then(response => {
             return response.json();

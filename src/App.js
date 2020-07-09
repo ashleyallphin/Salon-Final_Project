@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import "./components/FontAwesomeIcons/FontAwesomeIcons";
 import { BrowserRouter } from 'react-router-dom';
 import MainRouter from './MainRouter';
 

@@ -121,8 +121,10 @@ class SignUpForm extends Component {
                         <div
                             className="form-message-success text-center"
                             style={{ display: success ? "" : "none"}}>
-                                <h1>oui!</h1>    
-                                You've joined Salon. Please <Link to="/login">log in</Link> to your account to continue.
+                                {/* <h1>oui!</h1>     */}
+                                You've joined Salon. Please
+                                <Link className="log-in-link" to="/login">log in</Link>
+                                to your account to continue.
                         </div>
 
                         
@@ -133,6 +135,8 @@ class SignUpForm extends Component {
 
                 {/* renders form from above */}
                 {this.signUpInputFields( firstName, lastName, email, username, password)}
+
+                <div className="flex-grow"></div>
             
             </div>
 

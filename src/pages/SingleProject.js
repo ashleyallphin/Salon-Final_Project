@@ -1,36 +1,42 @@
 import React, { Component } from 'react';
 import { listOneProject }  from '../api/post-api';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import DefaultProjectImage from '../assets/images/default_pics/salon-default-project-pic.png';
-import { Link } from 'react-router-dom';
+import FeedbackForm from '../components/FeedbackForm';
 import Image from 'react-bootstrap/Image'
 import Jumbotron from 'react-bootstrap/Jumbotron'
-import FormControl from 'react-bootstrap/FormControl';
-import Form from 'react-bootstrap/FormControl';
 import Container from 'react-bootstrap/Container'
-import SimpleReactLightbox from "simple-react-lightbox";
-import { SRLWrapper } from "simple-react-lightbox";
+// import { Link } from 'react-router-dom';
+// import SimpleReactLightbox from 'simple-react-lightbox';
+// import { SRLWrapper } from "simple-react-lightbox";
+
 
 class SingleProject extends Component {
     
     state = {
-        post: ''
+        post: '',
+        comments: []
     }
 
     componentDidMount = () => {
-        document.title = `{post.title}`;
+        document.title = `Salon: Gallery`;
         const postId = this.props.match.params.postId
         listOneProject(postId).then(data => {
             // console.log("hitting listOneProject from SingleProject component")
             if (data.error) {
                 console.log(data.error)
             } else {
-                this.setState( { post:data });
+                this.setState( {
+                    post:data,
+                    comments:data.comments
+                });
             }
             // console.log("sending username from page:", this.state.post.postedBy.username);
             console.log(this.state.post);
         });
+    }
+
+    updateComments = comments => {
+        this.setState({ comments:comments })
     }
 
     renderProject = (post) => {
@@ -43,37 +49,59 @@ class SingleProject extends Component {
         //     : "Unknown";
         
         return (
+            
 
-            <div className="single-project container text-center">
-                <SimpleReactLightbox>   
+            <div className="
+                fluid
+                container
+                text-center
+                single-project-component
+                ">
                 
-                <SRLWrapper>
-                <Image
-                    src={`/post/image/${post._id}`}
-                    alt={post.title}
-                    onError = {i => (i.target.src = `${DefaultProjectImage}`)}
-                    className="single-project-image"
-                    fluid>
-                </Image>
-                </SRLWrapper>
-
-                <Jumbotron fluid>
+                {/* <SimpleReactLightbox>
+                <SRLWrapper> */}
+                
                     <Container>
-                    
                     <a
                     rel="noopener noreferrer"
                     target="_blank"
                     href={`http://${post.projectLink}`}>
                         <h1>{post.title}</h1>
                     </a>
+                    </Container>
+                
+                <Image className="single-project-image"
+                    src={`/post/image/${post._id}`}
+                    alt={post.title}
+                    onError = {i => (i.target.src = `${DefaultProjectImage}`)}
+                    fluid>
+                </Image>
+                {/* </SRLWrapper>
+                </SimpleReactLightbox> */}
+
+                <Jumbotron fluid>
+                    <Container>
+                    
+                    <div className="project-description">
+                    {post.body}
+                    </div>
 
                     <div className="project-description">
-                                {post.body}</div>
+                    {post.body}
+                    </div>
 
+                    <div className="project-description">
+                    {post.body}
+                    </div>
+
+                    <div className="project-description">
+                    {post.body}
+                    </div>
+                    
                     </Container>
                 </Jumbotron>
 
-                <h2> text field for feedback form here</h2>
+
                     {/* <Card
                         className="project-card card">
                             
@@ -155,8 +183,9 @@ class SingleProject extends Component {
                         
                         </Card> */}
 
-                </SimpleReactLightbox>
+                
                 </div>
+                
 
 
 
@@ -165,17 +194,20 @@ class SingleProject extends Component {
 
     render() {
 
-        const {post} = this.state
+        const {post, comments, updateComments} = this.state
 
         return (
-
-            <>
-                <div className="section-title">
-                    {/* {`${post.postedBy.username} `} */}
-                    by OH MAN I AM SO FRUSTRATED
-                </div>
+            <div className="single-project-section">
+                {/* <div className="section-title">
+                <span>&nbsp;</span>
+                </div> */}
                 {this.renderProject(post)}
-            </>
+                <FeedbackForm
+                    postId={post._id}
+                    comments={comments}
+                    updateComments={this.updateComments}
+                    />
+            </div>
         )
     }
 }
