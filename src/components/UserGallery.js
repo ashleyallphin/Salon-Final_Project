@@ -13,7 +13,8 @@ class UserGallery extends Component {
                 <div className="section-title">
                 <span>&nbsp;</span>
                 </div>
-                    <h1>render user projects below</h1>
+                <div className="flex-grow"></div>
+                    {/* <h1>render user projects below</h1> */}
                     {/* <UserProjectCard /> */}
                 </div>
         );

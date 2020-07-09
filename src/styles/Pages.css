@@ -44,8 +44,6 @@ red: #C44D58
     flex-grow: 1;
 }
 
-
-
 .jumbotron img {
     height: 18vw;
     margin-bottom: 4px;
@@ -75,5 +73,29 @@ red: #C44D58
 
 .single-project-image {
     max-width: 50%;
-    margin: 3rem;
-  }
+    margin: 2rem;
+}
+
+.single-comment {
+    padding-top: 1em;
+    border-bottom: 1px solid #C6D930;
+}
+
+.comment-text {
+    font-family: "St Ryde Light";
+    font-size: 1.2rem;
+    line-height: 1.15;
+}
+
+div.comment-date {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.comment-poster,
+.comment-poster a {
+    font-family: "St Ryde Bold";
+    margin-bottom: .5rem;
+    color: #F26A21 !important;
+    font-size: 1.1rem;
+}

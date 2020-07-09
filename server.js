@@ -13,6 +13,7 @@ const mongoose = require("mongoose");
 const expressValidator = require ('express-validator');
 const dotenv = require ('dotenv');
 dotenv.config();
+const PORT = process.env.PORT || 8080
 
 // invoke express
 const app = express();
@@ -49,9 +50,12 @@ app.use(function (err, req, res, next) {
     });
 
 
+    if (process.env.NODE_ENV === 'production') {
+        app.use(express.static('/build'));
+    }
+
 // LISTEN
 // ================================================
-var PORT = 8080
 app.listen(PORT, () => {
     console.log(`\nApp listening on `.x81 + `http://localhost:${PORT}`.x226.underline);
 });

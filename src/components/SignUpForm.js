@@ -136,7 +136,7 @@ class SignUpForm extends Component {
                 {/* renders form from above */}
                 {this.signUpInputFields( firstName, lastName, email, username, password)}
 
-                <div className="flex-grow"></div>
+                {/* <div className="flex-grow"></div> */}
             
             </div>
 

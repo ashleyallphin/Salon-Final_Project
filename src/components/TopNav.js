@@ -59,15 +59,17 @@ const TopNav = ({ history }) => (
                         </Nav.Link> */}
                         <Nav.Link>
                             <NavLink
+                                className="nav-link"
                                 activeClassName="navbar-active"
-                                className="nav-link" to="/gallery">
+                                to="/gallery"
+                            >
                                 Gallery
                             </NavLink>
                         </Nav.Link>
                         <Nav.Link>
                             <NavLink
-                                activeClassName="navbar-active"
                                 className="nav-link"
+                                activeClassName="navbar-active"
                                 to={`/artist/studio/${isAuthenticated().user.username}`}
                             >
                                 Studio
@@ -77,7 +79,7 @@ const TopNav = ({ history }) => (
                             <div
                                 className="nav-link" 
                                 onClick={() => logout(() => history.push("/login"))}>
-                                    Logout
+                                Logout
                             </div>
                         </Nav.Link>
                     </Nav>

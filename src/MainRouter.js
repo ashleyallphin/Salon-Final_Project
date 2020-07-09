@@ -18,6 +18,7 @@ const MainRouter = () => (
 
     <div>
         <TopNav />
+        
         <Switch>
             <Route exact path="/" component={LogIn} />
             <Route exact path="/login" component={LogIn} />
@@ -31,6 +32,8 @@ const MainRouter = () => (
             <PrivateRoute exact path="/artist/upload/:username" component={Upload} />
             <Redirect to="/pagenotfound" />
         </Switch>
+        <div className="Site-content"></div>
+
         <Footer />
     </div>
 

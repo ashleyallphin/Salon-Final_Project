@@ -54,7 +54,7 @@ class Profile extends Component {
 
         return (
             
-            <> 
+            <div className="page"> 
             <div className="profile-section">
 				
                     <div className="section-title">
@@ -156,10 +156,10 @@ class Profile extends Component {
                     </Card>
 
 				</div>  
-
+            {/* <div className="flex-grow"></div> */}
             <UserGallery />
 
-            </>          
+            </div>          
 
         )
     }

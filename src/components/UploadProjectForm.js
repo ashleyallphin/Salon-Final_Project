@@ -560,7 +560,7 @@ class UploadProjectForm extends Component {
         }
 
         return (
-            <div className="component text-center">
+            <div className="component text-center upload-project-form">
                 
                 <Jumbotron fluid className="jumbotron" >
                     <div className="vertical-center">
