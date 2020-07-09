@@ -6,6 +6,7 @@ const bodyParser = require ('body-parser');
 const cookieParser = require ('cookie-parser');
 const morgan = require ("morgan");
 const mongoose = require("mongoose");
+const path = require('path');
     //to circumvent deprecation warnings
     mongoose.set('useNewUrlParser', true);
     mongoose.set('useUnifiedTopology', true);
@@ -13,7 +14,7 @@ const mongoose = require("mongoose");
 const expressValidator = require ('express-validator');
 const dotenv = require ('dotenv');
 dotenv.config();
-const PORT = process.env.PORT || 8080
+
 
 // invoke express
 const app = express();
@@ -48,14 +49,16 @@ app.use(function (err, req, res, next) {
     res.status(401).json('Authorization error: Please log in to Salon to access this content.');
     }
     });
+app.use(express.static(path.join(__dirname, 'build')));
 
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('/build'));
-}
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    });
 
 // LISTEN
 // ================================================
+const PORT = process.env.PORT || 8080
 app.listen(PORT, () => {
     console.log(`\nApp listening on `.x81 + `http://localhost:${PORT}`.x226.underline);
 });
