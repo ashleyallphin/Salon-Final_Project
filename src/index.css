@@ -93,36 +93,22 @@ src: url("//db.onlinewebfonts.com/t/6536a8df9c8e429b0f9a5f95938eb798.eot?#iefix"
 
 /* INDEX.HTML ===================================================== */
 
-html {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-}
-
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #C6D930;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
     height: 100%;
-}
-
-code {
+    background-color: #C6D930
+  }
+  
+  code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-#root {
-    width: 100%;
-    height: 100%;
-}
+      monospace;
+  }
+  
 
 
 

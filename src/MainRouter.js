@@ -16,10 +16,11 @@ import Footer from './components/Footer';
 
 const MainRouter = () => (
 
-    <div>
+    <div className="stretch">
         <TopNav />
         
         <Switch>
+
             <Route exact path="/" component={LogIn} />
             <Route exact path="/login" component={LogIn} />
             <Route exact path="/signup" component={SignUp} />
@@ -32,7 +33,6 @@ const MainRouter = () => (
             <PrivateRoute exact path="/artist/upload/:username" component={Upload} />
             <Redirect to="/pagenotfound" />
         </Switch>
-        <div className="Site-content"></div>
 
         <Footer />
     </div>

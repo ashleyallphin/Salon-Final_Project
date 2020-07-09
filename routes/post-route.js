@@ -37,10 +37,8 @@ router.post('/post/new/:username', createPost, createPostValidator)
 router.put('/post/:postId', isPoster, updatePost);
 router.delete("/post/:postId", isPoster, deletePost);
 
-
-// comments
-router.put('/project/comment', leaveFeedback);
-router.put('/project/uncomment', removeFeedback);
+router.put("/project/comment", leaveFeedback);
+router.delete("/project/uncomment", removeFeedback);
 // router.put('/post/updatecomment', updateComment);
 
 // make query to database and get user information for any route containing :username

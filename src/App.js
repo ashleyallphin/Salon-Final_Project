@@ -6,14 +6,14 @@ import MainRouter from './MainRouter';
 
 
 const App = () => (
-	<>
-		<div className="app">
+	<div className="app">
+		<div>
 			<BrowserRouter>
 				<MainRouter>
 				</MainRouter>
 			</BrowserRouter>
 		</div>
-	</>
+	</div>
 )
 
 export default App;

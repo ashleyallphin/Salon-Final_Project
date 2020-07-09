@@ -172,13 +172,39 @@ exports.leaveFeedback = (req, res) => {
     });
 }
 
+// exports.removeFeedback = (req, res) => {
+//     console.log(`\n\nhitting removeFeedback method from post-controller`.x211)
+//     let comment = req.body.comment;
+//     // https://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate
+//     Post.findByIdAndUpdate (
+//         req.body.postId,
+//         { $pull: { comments: { _id:comment._id} } },
+//         { new: true },
+//     )
+//     .populate ('comments.postedBy', '_id username email')
+//     .populate ('postedBy', "_id username email")
+//     .exec((err, result) => {
+//         if (err) {
+//             return res.status(400).json({
+//                 error: err
+//             });
+//         } else {
+//             res.json(result);
+//             console.log(`moved through removeFeedback method from post-controller!`.x161);
+//         }
+//     });
+// }
+
+
+
 exports.removeFeedback = (req, res) => {
-    console.log(`\n\nhitting removeFeedback method from post-controller`.x211)
+    console.log(`\n\nhitting removeFeedback method from post-controller -- route is project/uncomment/`.x211)
     let comment = req.body.comment;
+    comment.postedBy = req.body.userId
     // https://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate
     Post.findByIdAndUpdate (
         req.body.postId,
-        { $pull: { comments: { _id:comment._id} } },
+        { $pull: { comments: comment } },
         { new: true },
     )
     .populate ('comments.postedBy', '_id username email')
@@ -190,7 +216,7 @@ exports.removeFeedback = (req, res) => {
             });
         } else {
             res.json(result);
-            console.log(`moved through removeFeedback method from post-controller!`.x161);
+            console.log(`moved through leaveFeedback method from post-controller! -- new`.x161);
         }
     });
 }
