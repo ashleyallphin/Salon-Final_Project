@@ -17,7 +17,6 @@ class Profile extends Component {
 
     componentDidMount() {
         // console.log(this.props.match.params.username)
-        console.log(this.props.match.params.username)
 	}
 
     render() {

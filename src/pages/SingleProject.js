@@ -4,7 +4,12 @@ import DefaultProjectImage from '../assets/images/default_pics/salon-default-pro
 import FeedbackForm from '../components/FeedbackForm';
 import Image from 'react-bootstrap/Image'
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { isAuthenticated } from '../api/authentication-api';
+import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 // import SimpleReactLightbox from 'simple-react-lightbox';
 // import { SRLWrapper } from "simple-react-lightbox";
@@ -30,8 +35,7 @@ class SingleProject extends Component {
                     comments:data.comments
                 });
             }
-            // console.log("sending username from page:", this.state.post.postedBy.username);
-            console.log(this.state.post);
+            console.log(this.state.post.postedBy.username);
         });
     }
 
@@ -40,27 +44,15 @@ class SingleProject extends Component {
     }
 
     renderProject = (post) => {
-        
-        // const artistId = post.postedBy
-        //     ? `/studio/${post.postedBy.username}`
-        //     : '';
-        // const artistUsername = post.postedBy
-        //     ? post.postedBy.username
-        //     : "Unknown";
-        
         return (
-            
-
             <div className="
                 fluid
                 container
                 text-center
                 single-project-component
                 ">
-                
                 {/* <SimpleReactLightbox>
                 <SRLWrapper> */}
-                
                     <Container>
                     <a
                     rel="noopener noreferrer"
@@ -69,7 +61,6 @@ class SingleProject extends Component {
                         <h1>{post.title}</h1>
                     </a>
                     </Container>
-                
                 <Image className="single-project-image"
                     src={`/post/image/${post._id}`}
                     alt={post.title}
@@ -78,17 +69,13 @@ class SingleProject extends Component {
                 </Image>
                 {/* </SRLWrapper>
                 </SimpleReactLightbox> */}
-
                 <Jumbotron fluid>
                     <Container>
-                    
                     {/* {JSON.stringify((this.state.post))} */}
 
                     {/* <div className="project-artist">
                     {post.postedBy.user._id}
                     </div> */}
-
-
                     <div className="single-project-description">
                     {post.body}
                     </div>
@@ -105,20 +92,27 @@ class SingleProject extends Component {
                     {post.projectStatus}
                     </div>
                     
+
+                    <h2 className="delete-profile-icon"
+                    onClick={this.confirmDeletePrompt}
+                    >
+                    <FontAwesomeIcon icon={faTrashAlt} />
+                    </h2>
+
+
+
                     </Container>
                 </Jumbotron>
                 
                 </div>
                 
 
-
-
         )
     }
 
     render() {
 
-        const {post, comments, updateComments} = this.state
+        const {post, comments} = this.state
 
         return (
             <div className="single-project-section">

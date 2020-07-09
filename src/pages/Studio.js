@@ -50,9 +50,6 @@ class Profile extends Component {
         });
     };
 
-
-
-
     componentDidMount() {
         const username = this.props.match.params.username;
         this.init(username);
@@ -178,7 +175,11 @@ class Profile extends Component {
                     </Card>
 
 				</div>  
-            {/* <div className="flex-grow"></div> */}
+            
+                <div className="section-title">
+                        {user.username}'s Gallery
+                </div>
+
             <UserGallery
                 posts={posts}
             />
