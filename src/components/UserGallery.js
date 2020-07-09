@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 import DefaultProjectImage from '../assets/images/default_pics/salon-default-project-pic.png';
+import { remove } from "../api/post-api";
 import { Link } from 'react-router-dom';
 import { isAuthenticated } from '../api/authentication-api';
 // import UserProjectCard from '../components/UserProjectCard';
 
 class UserGallery extends Component {
-    
+
+        
+    deletePost = () => {
+
+    };
     
     
     render() {
@@ -73,37 +78,14 @@ class UserGallery extends Component {
                             {isAuthenticated().user &&
                             isAuthenticated().user._id === post.postedBy._id && (
 
-                                <Button
+                            <Button
                             className="delete-project-button"
-                            variant="primary">
+                            variant="primary"
+                            onClick={this.deletePost}
+                            >
                             Delete Project</Button>
                             )}
                             
-                            {/* {isAuthenticated().user &&
-                            isAuthenticated().user._id !== user._id && (
-
-                                <div className="flex-div">
-                                
-                                <a href="http://paypal.com">
-                                    <Button className="edit-profile-button"
-                                    variant="primary">
-                                    Donate to Artist
-                                    </Button>
-                                </a>
-                                
-                                </div>
-                            )} */}
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                     </div>
 
                     {/* <div className="flex-grow"></div> */}

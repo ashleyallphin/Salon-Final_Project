@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { postFeedback, deleteFeedback } from '../api/post-api';
 import { isAuthenticated } from '../api/authentication-api';
-import DefaultProfilePic from '../assets/images/default_pics/salon-default-profile-pic.png';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
