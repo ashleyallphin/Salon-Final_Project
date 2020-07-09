@@ -32,7 +32,7 @@ exports.getPosts = (req, res) => {
     .populate("comments.postedBy", "_id username")
     .populate("postedBy", "_id username")
     // this select method is optional -- if left out, ALL of the values will be returned
-    .sort ({ posted: -1 })
+    .sort ({ posted: +1})
     .select("_id body title projectMedium projectCategory projectTags projectYear projectLink projectStatus posted")
     .then(posts => {
         // status 200 is default, so we can leave it out in the future
