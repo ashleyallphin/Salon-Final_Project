@@ -97,10 +97,10 @@ exports.postsByUser = (req, res) => {
     });
 };
 
-exports.isArtist = (req, res, next) => {
-    console.log(`\n\isArtist method from post-controller`.x211)
-    let isArtist = req.post && req.auth && req.post.postedBy._id === req.auth._id
-    if (!isArtist) {
+exports.isPoster = (req, res, next) => {
+    console.log(`\n\isPoster method from post-controller`.x211)
+    let isPoster = req.post && req.auth && req.post.postedBy._id === req.auth._id
+    if (!isPoster) {
         return res.status(403).json({
             error: "User is not authorized to perform this action."
         });

@@ -1,7 +1,7 @@
 const color = require('colors-cli/toxic');
 // router.get('/posts', restrictedRouteAccess, getPosts);
 // router.get("/posts/by/:username", restrictedRouteAccess, postsByUser);
-// router.delete("/post/:postId", restrictedRouteAccess, isArtist, deletePost);
+// router.delete("/post/:postId", restrictedRouteAccess, isPoster, deletePost);
 // router.post('/post/new/:username', restrictedRouteAccess, createPost, createPostValidator)
 // router.param("username", getUserByUsername);
 // router.param("postId", postsById);
@@ -58,7 +58,7 @@ export const listProjectsByUser = (username, token) => {
         .catch(err => console.log(err));
 };
 
-export const postFeedback = (userId, username, token, postId, comment) => {
+export const postFeedback = (userId, token, postId, comment) => {
     console.log(`\nhitting postFeedback method from post-api.js\n`.x205);
     return fetch(`/project/comment`, {
         method: "PUT",
@@ -67,7 +67,7 @@ export const postFeedback = (userId, username, token, postId, comment) => {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`
         },
-        body: JSON.stringify({ userId, username, postId, comment })
+        body: JSON.stringify({ userId, postId, comment })
     })
         .then(response => {
             return response.json();

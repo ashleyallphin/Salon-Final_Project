@@ -27,10 +27,10 @@ COLORS
 }
 
 .page-title {
-  font-family: "St Ryde Bold";
+  font-family: "St Ryde Bold" !important;
   font-size: calc(3vw + 1.5em);
   color: #566271;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 h1 {

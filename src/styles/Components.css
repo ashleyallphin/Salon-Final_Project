@@ -32,10 +32,10 @@ display: flex;
 }
 
 .page-title {
-font-family: "St Ryde Bold";
+font-family: "St Ryde Bold" !important;
 font-size: calc(3vw + 1.5em);
 color: #566271;
-margin-bottom: 1rem;
+margin-bottom: 0rem;
 }
 
 h1 {
@@ -335,6 +335,14 @@ button:focus {
   margin-left: 2vh;
 }
 
+.log-in-link {
+  color: #fff;
+}
+.log-in-link:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
 .text-links {
   font-family: "St Ryde light italic";
   margin-top: 2vh;
@@ -356,6 +364,7 @@ button:focus {
 .form-message-error {
   font-family: "St Ryde bold";
   margin-top: 2vh;
+  margin-bottom: 2vh;
   font-size: calc(2vh + 5px);
   text-align: left;
   color: #C44D58;

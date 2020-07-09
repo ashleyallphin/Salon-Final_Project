@@ -128,7 +128,7 @@ class ProjectCard extends Component {
         
         };
 
-    render() {
+    render(comments) {
         const { posts } = this.state;
         return (
         <>

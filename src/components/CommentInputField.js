@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Form from 'react-bootstrap/FormControl';
 
 
-class CommentInputField extends Component {
+class FeedbackForm extends Component {
     render() {
         return (
                 <div className="component">
@@ -20,4 +20,4 @@ class CommentInputField extends Component {
         )
     }
 }
-export default CommentInputField
+export default FeedbackForm

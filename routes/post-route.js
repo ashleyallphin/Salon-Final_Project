@@ -7,7 +7,7 @@ const
     getOnePost,
     postsByUser,
     postsById,
-    isArtist,
+    isPoster,
     updatePost,
     deletePost,
     getProjectImage,
@@ -34,8 +34,8 @@ router.get('/post/:postId', getOnePost);
 router.get("/posts/by/:username", postsByUser);
 router.get("/post/image/:postId", getProjectImage); 
 router.post('/post/new/:username', createPost, createPostValidator)
-router.put('/post/:postId', isArtist, updatePost);
-router.delete("/post/:postId", isArtist, deletePost);
+router.put('/post/:postId', isPoster, updatePost);
+router.delete("/post/:postId", isPoster, deletePost);
 
 
 // comments

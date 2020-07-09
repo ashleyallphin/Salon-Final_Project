@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { listOneProject }  from '../api/post-api';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import DefaultProjectImage from '../assets/images/default_pics/salon-default-project-pic.png';
 import FeedbackForm from '../components/FeedbackForm';
-import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
+// import { Link } from 'react-router-dom';
 // import SimpleReactLightbox from 'simple-react-lightbox';
 // import { SRLWrapper } from "simple-react-lightbox";
+
 
 class SingleProject extends Component {
     
     state = {
-        post: ''
+        post: '',
+        comments: []
     }
 
     componentDidMount = () => {
@@ -25,11 +25,18 @@ class SingleProject extends Component {
             if (data.error) {
                 console.log(data.error)
             } else {
-                this.setState( { post:data });
+                this.setState( {
+                    post:data,
+                    comments:data.comments
+                });
             }
             // console.log("sending username from page:", this.state.post.postedBy.username);
             console.log(this.state.post);
         });
+    }
+
+    updateComments = comments => {
+        this.setState({ comments:comments })
     }
 
     renderProject = (post) => {
@@ -51,7 +58,6 @@ class SingleProject extends Component {
                 single-project-component
                 ">
                 
-
                 {/* <SimpleReactLightbox>
                 <SRLWrapper> */}
                 
@@ -188,7 +194,7 @@ class SingleProject extends Component {
 
     render() {
 
-        const {post} = this.state
+        const {post, comments, updateComments} = this.state
 
         return (
             <div className="single-project-section">
@@ -196,7 +202,11 @@ class SingleProject extends Component {
                 <span>&nbsp;</span>
                 </div> */}
                 {this.renderProject(post)}
-                <FeedbackForm />
+                <FeedbackForm
+                    postId={post._id}
+                    comments={comments}
+                    updateComments={this.updateComments}
+                    />
             </div>
         )
     }
